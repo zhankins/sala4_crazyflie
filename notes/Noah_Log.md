@@ -8,3 +8,21 @@
     - Testing the crazyflie withOUT the flow deck, and turning it off and on again to recalibrate produced the same ramping pose each time, but a different ramping pose from the plot with the flow deck. 
   - This indicates to me that there could be some conflicting pose estimation between the decks, which is evidenced by [this article](https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/functional-areas/sensor-to-control/state_estimators/) which leads us to believe that we need to change to the Kalman estimator in code
   - Another issue was that there was a bad array access within the example code, which didnt seem to be fixed after changing the code. Need to investigate that further
+
+# Oct. 24
+Questions to ask Dr. Culbertson:
+- whether or not ros can support realtime - building digital twin (strict timing constraints), and if that timing is simulated
+- understanding abstraction of gazebo models and how the models interpret commands sent to the actual robot/drone (does it use the firmware on the drone itself?)
+Found PID values in firmware:
+- https://github.com/bitcraze/crazyflie-firmware/blob/master/src/platform/interface/platform_defaults_cf21bl.h
+as well as assorted gazebo models and worlds here
+- https://github.com/knmcguire/ros_gz_crazyflie
+began setting up firmware compiling toolchain
+- installed and set up Docker and [Toolbelt](https://github.com/bitcraze/toolbelt?tab=readme-ov-file)
+- Alias created for 'tb' in bashrc
+building pipeline:
+- adapted from [here](https://github.com/bitcraze/crazyflie-firmware/blob/master/docs/building-and-flashing/build.md)
+- inside `~/crazyflie/crazyflie-firmware` run `tb compile` to compile firmware
+- run `make cf2_defconfig` to make function definitions
+- run `make bindings_python` to make python firmware binding file located at `./build/cffirmware.py`
+this cffirmware.py file imports the `_cffirmware.cpython[assorted version data].so` shared library.
