@@ -26,3 +26,5 @@ building pipeline:
 - run `make cf2_defconfig` to make function definitions
 - run `make bindings_python` to make python firmware binding file located at `./build/cffirmware.py`
 this cffirmware.py file imports the `_cffirmware.cpython[assorted version data].so` shared library.
+
+#
