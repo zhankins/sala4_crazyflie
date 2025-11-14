@@ -124,12 +124,12 @@ class SimpleMapperMultiranger(Node):
             return
         for i in range(len(data)):
             # self.get_logger().info(f"Point {i} {data[i]}")
-            point_x = int((data[i][0] - GLOBAL_SIZE_X / 2.0) / MAP_RES)
-            point_y = int((data[i][1] - GLOBAL_SIZE_Y / 2.0) / MAP_RES)
+            point_x = int((data[i][0] + GLOBAL_SIZE_X / 2.0) / MAP_RES)
+            point_y = int((data[i][1] + GLOBAL_SIZE_Y / 2.0) / MAP_RES)
             points_x.append(point_x)
             points_y.append(point_y)
-            position_x_map = int((self.position[0] - GLOBAL_SIZE_X / 2.0) / MAP_RES)
-            position_y_map = int((self.position[1] - GLOBAL_SIZE_Y / 2.0) / MAP_RES)
+            position_x_map = int((self.position[0] + GLOBAL_SIZE_X / 2.0) / MAP_RES)
+            position_y_map = int((self.position[1] + GLOBAL_SIZE_Y / 2.0) / MAP_RES)
             for line_x, line_y in self.bresenham_line(
                 position_x_map, position_y_map, point_x, point_y
             ):

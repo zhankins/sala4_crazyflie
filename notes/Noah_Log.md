@@ -27,4 +27,8 @@ building pipeline:
 - run `make bindings_python` to make python firmware binding file located at `./build/cffirmware.py`
 this cffirmware.py file imports the `_cffirmware.cpython[assorted version data].so` shared library.
 
-#
+# Nov. 13
+- encountering some weird things where the drone flies around like crazy when the flow deck is attached
+- the following forum post leads me to believe that there might be some conflict between it and the lighthouse
+- https://forum.bitcraze.io/viewtopic.php?t=4197
+- could be useful: https://www.bitcraze.io/documentation/system/platform/cf2-expansiondecks/#compatibility-matrixes

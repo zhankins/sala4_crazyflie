@@ -23,6 +23,6 @@ setup(
     license="GPL-3.0-only",
     tests_require=["pytest"],
     entry_points={
-        "console_scripts": ["mapper_multiranger = sala4.mapper_multiranger:main"],
+        "console_scripts": ["mapper_multiranger = sala4.mapper_multiranger:main", "wall_following_multiranger = sala4.wall_following_multiranger:main"],
     },
 )
