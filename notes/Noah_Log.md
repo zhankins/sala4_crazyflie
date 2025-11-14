@@ -32,3 +32,4 @@ this cffirmware.py file imports the `_cffirmware.cpython[assorted version data].
 - the following forum post leads me to believe that there might be some conflict between it and the lighthouse
 - https://forum.bitcraze.io/viewtopic.php?t=4197
 - could be useful: https://www.bitcraze.io/documentation/system/platform/cf2-expansiondecks/#compatibility-matrixes
+- https://github.com/bitcraze/crazyflie-firmware/issues/806
