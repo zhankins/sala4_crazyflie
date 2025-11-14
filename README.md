@@ -9,3 +9,7 @@ To launch the SALA4 ROS2 package, first run the `./scripts/prelaunch_ros.sh` scr
 You can then use the `sala4_bringup` package to launch.
 
 `ros2 launch sala4_bringup mapper_simulation.launch.py`
+
+## Building
+After creating or renaming any python file in either the `sala4_bringup` or `sala4` packages, you must rebuild the ROS workspace by running
+`source scripts/build.sh`

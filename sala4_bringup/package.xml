@@ -13,6 +13,8 @@
   <test_depend>python3-pytest</test_depend>
   <depend>ros_gz_crazyflie_bringup</depend>
   <depend>crazyflie_py</depend>
+  <exec_depend>ros2launch</exec_depend>
+
 
   <export>
     <build_type>ament_python</build_type>

@@ -44,16 +44,7 @@ def generate_launch_description():
             {"robot_prefix": "crazyflie_real"},
         ],
     )
-
-    # start a simple mapper node
-    simple_mapper = Node(
-        package="sala4",
-        executable="mapper_multiranger",
-        name="mapper_multiranger",
-        output="screen",
-        parameters=[{"robot_prefix": "crazyflie_real"}, {"use_sim_time": False}],
-    )
-
+    
     rviz_config_path = os.path.join(
         get_package_share_directory("sala4_bringup"),
         "config",
@@ -69,4 +60,4 @@ def generate_launch_description():
         parameters=[{"use_sim_time": False}],
     )
 
-    return LaunchDescription([crazyflie_real, simple_mapper, crazyflie_vel_mux, rviz])
+    return LaunchDescription([crazyflie_real, crazyflie_vel_mux, rviz])
