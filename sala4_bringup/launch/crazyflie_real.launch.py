@@ -33,7 +33,6 @@ def generate_launch_description():
     )
 
     # Start a velocity multiplexer node for the crazyflie
-    # TODO: remove to launch separately via ros2 run
     crazyflie_vel_mux = Node(
         package="crazyflie",
         executable="vel_mux.py",
@@ -44,6 +43,13 @@ def generate_launch_description():
             {"incoming_twist_topic": "/cmd_vel"},
             {"robot_prefix": "crazyflie_real"},
         ],
+    )
+    # start the arming node
+    arming = Node(
+        package="sala4",
+        executable="arming",
+        name="arming",
+        output="screen",
     )
 
     # start a simple mapper node
@@ -70,4 +76,6 @@ def generate_launch_description():
         parameters=[{"use_sim_time": False}],
     )
 
-    return LaunchDescription([crazyflie_real, simple_mapper, crazyflie_vel_mux, rviz])
+    return LaunchDescription(
+        [crazyflie_real, simple_mapper, crazyflie_vel_mux, rviz, arming]
+    )
