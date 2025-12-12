@@ -1,5 +1,8 @@
 # CrazyFlie Battery Specifications
 https://store.bitcraze.io/collections/accessories/products/350mah-lipo-battery
+
+[Forum on Battery Selection for the crazyflie](https://forum.bitcraze.io/viewtopic.php?f=6&t=392)
+
 Dimensions:
 General specification
 ---
