@@ -8,11 +8,6 @@ import rclpy
 from crazyflie_interfaces.srv import Arm
 from rclpy.node import Node
 
-GLOBAL_SIZE_X = 20.0
-GLOBAL_SIZE_Y = 20.0
-MAP_RES = 0.1
-
-
 class Arming(Node):
     def __init__(self):
         super().__init__("arming")
@@ -46,7 +41,6 @@ class Arming(Node):
 
     def arm_response_callback(self, future):
         try:
-            response = future.result()
             self.get_logger().info("Crazyflies armed successfully!")
             self.armed = True
         except Exception as e:
@@ -57,7 +51,7 @@ def main(args=None):
     rclpy.init(args=args)
     arming = Arming()
     rclpy.spin(arming)
-    rclpy.destroy_node()
+    arming.destroy_node()
     rclpy.shutdown()
 
 

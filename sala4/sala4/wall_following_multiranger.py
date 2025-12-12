@@ -173,7 +173,7 @@ def main(args=None):
     rclpy.init(args=args)
     wall_following_multiranger = WallFollowingMultiranger()
     rclpy.spin(wall_following_multiranger)
-    rclpy.destroy_node()
+    wall_following_multiranger.destroy_node()
     rclpy.shutdown()
 
 

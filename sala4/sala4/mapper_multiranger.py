@@ -212,7 +212,7 @@ def main(args=None):
     rclpy.init(args=args)
     simple_mapper_multiranger = SimpleMapperMultiranger()
     rclpy.spin(simple_mapper_multiranger)
-    rclpy.destroy_node()
+    simple_mapper_multiranger.destroy_node()
     rclpy.shutdown()
 
 

@@ -44,7 +44,7 @@ def generate_launch_description():
             {"robot_prefix": "crazyflie_real"},
         ],
     )
-    # start the arming node
+    # start the arming node to prepare the brushless drone for takeoff
     arming = Node(
         package="sala4",
         executable="arming",
@@ -53,6 +53,7 @@ def generate_launch_description():
     )
 
     # start a simple mapper node
+    # TODO: remove this and break out to commands to be run
     simple_mapper = Node(
         package="sala4",
         executable="mapper_multiranger",
