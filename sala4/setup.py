@@ -27,6 +27,7 @@ setup(
             "mapper_multiranger = sala4.mapper_multiranger:main",
             "wall_following_multiranger = sala4.wall_following_multiranger:main",
             "arming = sala4.arming:main",
+            "waypoint_following = sala4.waypoint_following:main",
         ],
     },
 )

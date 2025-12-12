@@ -33,3 +33,7 @@ After the drone has been initialized via the launch files, we can run any of the
 `ros2 run sala4 [script_name].py`
 For example, to run `mapper_multiranger.py`:
 `ros2 run sala4 mapper_multiranger.py`
+
+When creating new nodes to be run, you must add them to `./sala4/setup.py` so that they can be seen by the compiler and be compiled. You can do this by modifying the `entry_points`' `console_scripts` value, and add a corresponding entry with the name and file path of the node. For example, if you add a node named `waypoint.py`, you would add `"waypoint = sala4.waypoint:main"` to the `console_scripts` array.
+
+After adding a new node, you must build the workspace again by running the `build.sh` script described above in the **building** section.
